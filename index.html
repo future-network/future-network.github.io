@@ -29,7 +29,6 @@
 				if (xmlhttp.readyState == 4) {
 					if(xmlhttp.status == 200) {
 						address = eval('(' + xmlhttp.responseText + ')');
-						alert(address.ftp)
 						document.getElementById('ftp').href = address.ftp
 					}
 				}
