@@ -5,17 +5,39 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<script>
+			var xmlhttp;
+			if (window.XMLHttpRequest) {
+				xmlhttp = new XMLHttpRequest();
+			}else {
+				xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');	
+			}
+			if (xmlhttp != null) {
+				xmlhttp.onredaystatechange=updateIP;
+				xmlhttp.open('GET', 'http://future-network.github.io/address.json', true);
+				xmlhttp.send(null);
+			}
+			
+			function updateIP(){
+				if (xmlhttp.readyState == 4) {
+					if(xmlhttp.status == 200) {
+						address = eval('(' + xmlhttp.responseText + ')');
+						document.getElementById('ftp').href = address.ftp
+					}
+				}
+			}
+			/*
 			var queryParams = location.search
 			if(queryParams.indexOf('?v=') == -1) {	
 				window.location.href = "http://future-network.github.io?v=1.0";
 			}
+			*/
 		</script>
 	</head>
 	<body class="is-preload">
 		<h1 style="text-align:center"> 应用列表 </h1>
 		<ul style="list-style:decimal;left: 50%;position:  relative;width: 150px;margin-left: -75px;">
-			<li><a href="ftp://223.3.66.39">文档管理系统</a></li>
-			<li><a href="http://223.3.69.57:8000">Jupyter开发平台</a></li>
+			<li><a href="ftp://223.3.66.39" id="ftp">文档管理系统</a></li>
+			<li><a href="http://223.3.69.57:8000" id="gpu">Jupyter开发平台</a></li>
 		</ul>
 	</body>
 </html>
