@@ -5,12 +5,6 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<script>
-			var req;
-			if(window.XMLHttpRequest){
-				req = new XMLHttpRequest()
-			}else{
-				req = new ActiveXObject("Microsoft.XMLHTTP");
-			}
 			var queryParams = location.search
 			if(queryParams.indexOf('?v=') == -1) {	
 				window.location.href = "http://future-network.github.io?v=1.0";
