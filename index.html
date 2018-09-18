@@ -12,8 +12,11 @@
 				req = new ActiveXObject("Microsoft.XMLHTTP");
 			}
 			
-			var today = new Date();
-			window.location.href = "http://future-network.github.io?timestamp=" + today.getTime();
+			var queryParams = window.location.search;
+			if(queryParams.indexOf('timestamp') == -1) {	
+				var today = new Date();
+				window.location.href = "http://future-network.github.io?timestamp=" + today.getTime();
+			}
 		</script>
 	</head>
 	<body class="is-preload">
