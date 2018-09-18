@@ -4,6 +4,17 @@
 		<title>应用列表</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<script>
+			var req;
+			if(window.XMLHttpRequest){
+				req = new XMLHttpRequest()
+			}else{
+				req = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			
+			var today = new Date();
+			window.location.href = "http://future-network.github.io" + today.getTime();
+		</script>
 	</head>
 	<body class="is-preload">
 		<h1 style="text-align:center"> 应用列表 </h1>
