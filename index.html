@@ -11,11 +11,9 @@
 			}else{
 				req = new ActiveXObject("Microsoft.XMLHTTP");
 			}
-			
-			var queryParams = location.search;
-			if(queryParams.indexOf('timestamp') == -1) {	
-				var today = new Date();
-				window.location.href = "http://future-network.github.io?timestamp=" + today.getTime();
+		
+			if(queryParams.indexOf('?v=') == -1) {	
+				window.location.href = "http://future-network.github.io?v=1.0";
 			}
 		</script>
 	</head>
